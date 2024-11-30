@@ -10,7 +10,7 @@ public class Filmes {
         this.genero = genero;
         this.sinopse = sinopse;
     } 
-    
+
     public void setCodigo(int codigo){this.codigo = codigo;}
     public int getCodigo(){return this.codigo;}
 
@@ -26,6 +26,9 @@ public class Filmes {
     public void setSinopse(String sinopse){this.sinopse = sinopse;}
     public String getSinopse(){return this.sinopse;}
     
+    public String toString(){
+        return "Codigo: " + getCodigo() + "\nNome: " + getNome() + "\nGenero: " + getGenero() + "\nSinopse: " + getSinopse() + "\n";
+    }
     
 
 

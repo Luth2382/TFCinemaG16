@@ -5,7 +5,7 @@ public class Sessao {
     private Filmes Filmes;
     private int assentosDisponiveis;
 
-    public Sessao(Salas Salas, String horario, Filmes Filmes, int assentosDisponiveis) {
+    public Sessao(int assentosDisponiveis, String horario, Filmes Filmes, int quantAssentos) {
         
         this.Salas = Salas;
         this.horario = horario;
