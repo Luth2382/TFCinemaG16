@@ -6,15 +6,16 @@ public class Sessao {
     private int assentosDisponiveis;
     private int codigoSessao;
 
-    public Sessao(int codigoSessao, int assentosDisponiveis, String horario, Filmes Filmes, int quantAssentos) {
+    public Sessao(int codigoSessao,  String horario, Filmes Filmes, Salas sala, int  quantAssentos) {
         
-        this.Salas = Salas;
+        this.codigoSessao = codigoSessao;
         this.horario = horario;
         this.Filmes = Filmes;
+        this.Salas = Salas;
         this.assentosDisponiveis = assentosDisponiveis;
-        this.codigoSessao = codigoSessao;
     }
     public int assentosDisponiveis() {
      return assentosDisponiveis;
+
     }
 }

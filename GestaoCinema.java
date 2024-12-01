@@ -26,11 +26,10 @@ public class GestaoCinema {
 
     public void AdicionarSessao(Sessao sessao) { // adicionando sessoes na lista
         sessoes.add(sessao);
+    
     }
 
-    public void AdicionarVenda(VendaDeIngressos venda) { // adicionando vendas na lista
-        vendas.add(venda);
-    }
+
 
     public void removeFilme(Filmes filme) {
         if (filmes.contains(filme)) {
@@ -86,7 +85,6 @@ public class GestaoCinema {
     }
 
     public void AdicionarVenda(int quantDeIngressos, Sessao codiSessao, int precoIngresso) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'AdicionarVenda'");
     }
 

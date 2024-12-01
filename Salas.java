@@ -9,10 +9,10 @@ public class Salas {
     }
     
     public int getNumeroSala() {
-        return this.numeroSala;
+        return numeroSala;
     }
     
     public int getQuantidadeAssentos() {
-        return this.quantidadeAssentos;
+        return quantidadeAssentos;
     }
 }
