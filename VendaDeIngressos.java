@@ -1,4 +1,6 @@
+
 public class VendaDeIngressos {
+
     private int quantidadeDeIngressos;
     private Sessao sessao;
     private Double valorTotal;
@@ -9,17 +11,28 @@ public class VendaDeIngressos {
         this.valorTotal = valorTotal;
     }
 
+    public boolean disponibilidadeIngresso(int quant) {
+        if (quantidadeDeIngressos == 0) {
+            return false;
+        } else {
+            return true;
+
+        }
+
+    }
+
     public int getQuantidadeDeIngressos() {
         return quantidadeDeIngressos;
     }
 
-    public void setQuantidadeDeIngressos(int quantidadeDeIngressos) {           
+    public void setQuantidadeDeIngressos(int quantidadeDeIngressos) {
         this.quantidadeDeIngressos = quantidadeDeIngressos;
     }
 
     public Sessao getSessao() {
         return sessao;
     }
+
     public void setSessao(Sessao sessao) {
         this.sessao = sessao;
     }
@@ -32,8 +45,9 @@ public class VendaDeIngressos {
         this.valorTotal = valorTotal;
     }
 
+    public void ingressoVendido() {
 
+    }
 
-    
 }
 //(vai usar buffer writter) registra a venda de um ingresso, relacionando a sessão  e realizando o controle de quantidade de assentos

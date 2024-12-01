@@ -1,8 +1,8 @@
 public class Filmes {
-    private int codigo;
-    private String nome;
-    private String genero;
-    private String sinopse;
+    public int codigo;
+    public String nome;
+    public String genero;
+    public String sinopse;
 
     public Filmes(int codigo, String nome, String genero, String sinopse){
         this.codigo = codigo;
@@ -25,6 +25,10 @@ public class Filmes {
 
     public void setSinopse(String sinopse){this.sinopse = sinopse;}
     public String getSinopse(){return this.sinopse;}
+
+    
+    
+    
     
     public String toString(){
         return "Codigo: " + getCodigo() + "\nNome: " + getNome() + "\nGenero: " + getGenero() + "\nSinopse: " + getSinopse() + "\n";
