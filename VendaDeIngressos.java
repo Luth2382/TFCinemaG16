@@ -49,5 +49,9 @@ public class VendaDeIngressos {
 
     }
 
+    public void precoDoAssento(Sessao sessao, int preco){
+        
+    }
+
 }
 //(vai usar buffer writter) registra a venda de um ingresso, relacionando a sessão  e realizando o controle de quantidade de assentos

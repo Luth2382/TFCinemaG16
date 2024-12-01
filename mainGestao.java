@@ -59,22 +59,21 @@ public class mainGestao extends GestaoCinema {
                         Filmes filmSessao = sistema.filmes.get(codFilme); //pele codigo do filme temos o seu "nome"
                         System.out.println("Digite a sala da sessão");
                         int salaSessao = ent.nextInt();
+                        System.out.println("Digite o preço do ingresso dessa sessão");
+                        int precoIngressoSessao = ent.nextInt();
                         Salas salaDaSessao = sistema.salas.get(salaSessao); // pelo numero da sala temos os seus dados
-                        int AssentosSessao = salaDaSessao.getQuantidadeAssentos();
-                        sistema.AdicionarSessao(new Sessao(sessaoCod, horario, filmSessao, salaDaSessao, AssentosSessao));
+                        int AssentosSessao = salaDaSessao.getQuantidadeAssentos(); // quantidade de assentos na sessao
+                        sistema.AdicionarSessao(new Sessao(sessaoCod, horario, filmSessao, salaDaSessao, AssentosSessao, AssentosSessao));
                         break;
-                    case 4: // adicionar vendas
+                    case 4: // vender um ingresso
+                        System.out.println("Digite a sessão que quer assistir");
+                        int SessaoVenda = ent.nextInt();
+                        Sessao SessaovendaIng = sistema.sessoes.get(SessaoVenda); // assinatura da sessao desejada
+                        int assentosDisponiveis = SessaovendaIng.getQuantidadAssentos(); // essa variavel contem a quantidade disponivel de assentos nessa seção
+                        
 
-                        System.out.println("Digite o codigo da sessão ");
-                        int codSessaoVenda = ent.nextInt();
-                        System.out.println("digite a quantidade de ingressos dessa sessão");
-                        int quantDeIngressos = ent.nextInt();
-                        System.out.println("Digite o preço de ingresso:");
-                        Double precoIngresso = ent.nextDouble();
-                        Sessao codiSessao = sistema.sessoes.get(codSessaoVenda);
-                        int ingressosdaSessao = sistema.sessoes.get(sistema.codSessao.get(quanAssentos));
 
-                        sistema.AdicionarVenda(new VendaDeIngressos(quantDeIngressos, codiSessao, precoIngresso));
+
                         break;
                     case 5: //vender um ingresso
 

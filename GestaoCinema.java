@@ -84,6 +84,8 @@ public class GestaoCinema {
         return "";
     }
 
+
+
     public void AdicionarVenda(int quantDeIngressos, Sessao codiSessao, int precoIngresso) {
         throw new UnsupportedOperationException("Unimplemented method 'AdicionarVenda'");
     }
