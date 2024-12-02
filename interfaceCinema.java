@@ -1,9 +1,9 @@
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.*;
 
 public class interfaceCinema {
 
@@ -79,7 +79,7 @@ public class interfaceCinema {
         btSalvar.addActionListener(e -> {
             try {
                 int codigo = Integer.parseInt(txtCodigo.getText()); // Garantir que o código seja um número
-                Filmes filme = new Filmes(codigo, txtNome.getText(), txtGenero.getText(), txtSinopse.getText());
+                Filmes filme = new Filmes(codigo, txtNome.getText(), txtGenero.getText(), txtSinopse.getText()); // inserindo em filmes
                 sistema.AdicionarFilme(filme); // Adicionando o filme à lista
                 System.out.println("Filme salvo: " + txtNome.getText());
                 TelacadastroFilme.dispose(); // Fechando a janela após salvar
@@ -279,7 +279,7 @@ public class interfaceCinema {
                 writer.write("Filme: " + filme.getNome() + ", Quantidade de ingressos Vendidos: " + totalVendasFilme + "\n");
             }
 
-            // Finalização do relatório
+            //final do relatorio
             writer.write("\n");
             JOptionPane.showMessageDialog(null, "Relatório gerado");
         } catch (IOException e) {
