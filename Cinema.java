@@ -1,6 +1,3 @@
 public class Cinema {
-    public static void main(String[] args) {
-        
-    }
-    
+    //public void InterGrafica();
 }

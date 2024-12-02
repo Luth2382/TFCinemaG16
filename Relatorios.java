@@ -1,3 +1,0 @@
-public class Relatorios {
-    //faz o relatorio de venda por filme, por horario, sala, sessões, filmes que estiveram em mais sessões, salas mais utilizadas, etc...
-}
