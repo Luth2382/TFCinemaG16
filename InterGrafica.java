@@ -1,17 +1,18 @@
+/*
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+// do jp
 
+public class InterGrafica extends JFrame implements ActionListener {
 
-public class InterGrafica extends JFrame implements ActionListener{
-    
-    public InterGrafica(){
+    public InterGrafica() {
         //setando características da janela como: titulo, tamanho/largura, que o X de sair funcione etc
         setTitle("Venda de Ingressos no Cinema");
         setVisible(true);
-        setSize(800,500);
+        setSize(800, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -107,22 +108,21 @@ public class InterGrafica extends JFrame implements ActionListener{
         }
     }
 
-    
     private void abrirJanelaAdicionar(String tipo) {
         JFrame janela = new JFrame("Adicionar " + tipo);
         janela.setSize(300, 200);
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setLocationRelativeTo(this);
         janela.setLayout(null);
-    
+
         JLabel label = new JLabel("Digite o " + tipo + ":");
         label.setBounds(20, 20, 250, 30);
         janela.add(label);
-    
+
         JTextField campoTexto = new JTextField();
         campoTexto.setBounds(20, 60, 250, 30);
         janela.add(campoTexto);
-    
+
         JButton botaoSalvar = new JButton("Salvar");
         botaoSalvar.setBounds(90, 110, 100, 30);
         botaoSalvar.addActionListener(e -> {
@@ -130,10 +130,9 @@ public class InterGrafica extends JFrame implements ActionListener{
             janela.dispose();
         });
         janela.add(botaoSalvar);
-    
+
         janela.setVisible(true);
     }
-    
 
     private void abrirJanelaRemover() {
         JFrame janela = new JFrame("Remover");
@@ -141,16 +140,16 @@ public class InterGrafica extends JFrame implements ActionListener{
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setLocationRelativeTo(this);
         janela.setLayout(null);
-    
+
         JLabel label = new JLabel("Escolha o que deseja remover:");
         label.setBounds(20, 20, 250, 30);
         janela.add(label);
-    
-        String[] opcoes = { "Filme", "Sala", "Sessão" };
+
+        String[] opcoes = {"Filme", "Sala", "Sessão"};
         JComboBox<String> comboBox = new JComboBox<>(opcoes);
         comboBox.setBounds(20, 60, 250, 30);
         janela.add(comboBox);
-    
+
         JButton botaoRemover = new JButton("Remover");
         botaoRemover.setBounds(90, 110, 100, 30);
         botaoRemover.addActionListener(e -> {
@@ -158,7 +157,8 @@ public class InterGrafica extends JFrame implements ActionListener{
             janela.dispose();
         });
         janela.add(botaoRemover);
-    
+
         janela.setVisible(true);
     }
 }
+*/

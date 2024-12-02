@@ -191,89 +191,84 @@ public class mainGestao extends GestaoCinema {
 
                         System.out.println("Total de ingressos vendidos: " + totalDeIngressosVendidos);
                         break;
-                        
-                        
-                        case 13: // Gerar Relatório
-                            System.out.println("Gerando relatório");
-                            String arquivoRelatorio = "relatorio_cinema.txt";
-                        
-                            try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoRelatorio))) {
-                                writer.write("Relatório do cinema \n");
-                                writer.write("/n");
-                                writer.write("\nFilmes Disponíveis:\n");
-                                for (Filmes filme : sistema.filmes) {
-                                    writer.write("Código: " + filme.getCodigo() + ", Nome: " + filme.getNome() + ", Gênero: " + filme.getGenero() + "\n");
-                                }
-                        
-                                // Relatório de salas
-                                writer.write("\nSalas Disponíveis:\n");
-                                for (Salas sala : sistema.salas) {
-                                    writer.write("Número da Sala: " + sala.getNumeroSala() + ", Quantidade de Assentos: " + sala.getQuantidadeAssentos() + "\n");
-                                }
-                        
-                                // Relatório de sessões
-                                writer.write("\nSessões Existentes:\n");
-                                for (Sessao sessao : sistema.sessoes) {
-                                    writer.write("Código Sessão: " + sessao.getCodigoSala() + ", Sala: " + sessao.getSalasSessao().getNumeroSala() + ", Filme: " + sessao.getFilmesSessao().getNome() + ", Horário: " + sessao.getHorario() + "\n");
-                                }
-                        
-                                // Relatório de vendas por filme
-                                writer.write("\nVendas por Filme:\n");
-                                for (Filmes filme : sistema.filmes) {
-                                    int totalVendasFilme = 0;
-                                    for (VendaDeIngressos venda : sistema.vendas) {
-                                        if (venda.getSessao().getFilmesSessao().equals(filme)) {
-                                            totalVendasFilme += venda.getQuantidadeDeIngressos();
-                                        }
-                                    }
-                                    writer.write("Filme: " + filme.getNome() + ", Total de Ingressos Vendidos: " + totalVendasFilme + "\n");
-                                }
-                        
-                                // Relatório de vendas por horário
-                                writer.write("\nVendas por Horário:\n");
-                                for (Sessao sessao : sistema.sessoes) {
-                                    int totalVendasSessao = 0;
-                                    for (VendaDeIngressos venda : sistema.vendas) {
-                                        if (venda.getSessao().equals(sessao)) {
-                                            totalVendasSessao += venda.getQuantidadeDeIngressos();
-                                        }
-                                    }
-                                    writer.write("Sessão: " + sessao.getCodigoSala() + ", Horário: " + sessao.getHorario() + ", Total de Ingressos Vendidos: " + totalVendasSessao + "\n");
-                                }
-                        
-                                // Filmes mais exibidos (que mais apareceram em sessões)
-                                writer.write("\nFilmes Mais Exibidos:\n");
-                                for (Filmes filme : sistema.filmes) {
-                                    int countFilme = 0;
-                                    for (Sessao sessao : sistema.sessoes) {
-                                        if (sessao.getFilmesSessao().equals(filme)) {
-                                            countFilme++;
-                                        }
-                                    }
-                                    writer.write("Filme: " + filme.getNome() + ", Sessões: " + countFilme + "\n");
-                                }
-                        
-                                // Salas mais utilizadas (que mais apareceram em sessões)
-                                writer.write("\nSalas Mais Utilizadas:\n");
-                                for (Salas sala : sistema.salas) {
-                                    int countSala = 0;
-                                    for (Sessao sessao : sistema.sessoes) {
-                                        if (sessao.getSalasSessao().equals(sala)) {
-                                            countSala++;
-                                        }
-                                    }
-                                    writer.write("Sala: " + sala.getNumeroSala() + ", Sessões: " + countSala + "\n");
-                                }
-                        
-                                // Finalização do relatório
-                                writer.write("\n====================================\n");
-                                writer.write("Relatório gerado com sucesso!\n");
-                        
-                            } catch (IOException e) {
-                                System.out.println("Erro ao gerar o relatório: " + e.getMessage());
+
+                    case 13: // Gerar Relatório
+                        System.out.println("Gerando relatório");
+                        String arquivoRelatorio = "relatorio_cinema.txt";
+                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoRelatorio))) {
+                            writer.write("Relatório do cinema \n");
+                            writer.write("/n");
+                            writer.write("\nFilmes Disponíveis:\n");
+                            for (Filmes filme : sistema.filmes) {
+                                writer.write("Código: " + filme.getCodigo() + ", Nome: " + filme.getNome() + ", Gênero: " + filme.getGenero() + "\n");
                             }
-                            break;
-                        
+                            writer.write("\nSalas Disponíveis:\n");
+                            for (Salas sala : sistema.salas) {
+                                writer.write("Número da Sala: " + sala.getNumeroSala() + ", Quantidade de Assentos: " + sala.getQuantidadeAssentos() + "\n");
+                            }
+
+                            // Relatório de sessões
+                            writer.write("\nSessões Existentes:\n");
+                            for (Sessao sessao : sistema.sessoes) {
+                                writer.write("Código Sessão: " + sessao.getCodigoSala() + ", Sala: " + sessao.getSalasSessao().getNumeroSala() + ", Filme: " + sessao.getFilmesSessao().getNome() + ", Horário: " + sessao.getHorario() + "\n");
+                            }
+
+                            // Relatório de vendas por filme
+                            writer.write("\nVendas por Filme:\n");
+                            for (Filmes filme : sistema.filmes) {
+                                int totalVendasFilme = 0;
+                                for (VendaDeIngressos venda : sistema.vendas) {
+                                    if (venda.getSessao().getFilmesSessao().equals(filme)) {
+                                        totalVendasFilme += venda.getQuantidadeDeIngressos();
+                                    }
+                                }
+                                writer.write("Filme: " + filme.getNome() + ", Total de Ingressos Vendidos: " + totalVendasFilme + "\n");
+                            }
+
+                            // Relatório de vendas por horário
+                            writer.write("\nVendas por Horário:\n");
+                            for (Sessao sessao : sistema.sessoes) {
+                                int totalVendasSessao = 0;
+                                for (VendaDeIngressos venda : sistema.vendas) {
+                                    if (venda.getSessao().equals(sessao)) {
+                                        totalVendasSessao += venda.getQuantidadeDeIngressos();
+                                    }
+                                }
+                                writer.write("Sessão: " + sessao.getCodigoSala() + ", Horário: " + sessao.getHorario() + ", Total de Ingressos Vendidos: " + totalVendasSessao + "\n");
+                            }
+
+                            // Filmes mais exibidos (que mais apareceram em sessões)
+                            writer.write("\nFilmes Mais Exibidos:\n");
+                            for (Filmes filme : sistema.filmes) {
+                                int countFilme = 0;
+                                for (Sessao sessao : sistema.sessoes) {
+                                    if (sessao.getFilmesSessao().equals(filme)) {
+                                        countFilme++;
+                                    }
+                                }
+                                writer.write("Filme: " + filme.getNome() + ", Sessões: " + countFilme + "\n");
+                            }
+
+                            // Salas mais utilizadas (que mais apareceram em sessões)
+                            writer.write("\nSalas Mais Utilizadas:\n");
+                            for (Salas sala : sistema.salas) {
+                                int countSala = 0;
+                                for (Sessao sessao : sistema.sessoes) {
+                                    if (sessao.getSalasSessao().equals(sala)) {
+                                        countSala++;
+                                    }
+                                }
+                                writer.write("Sala: " + sala.getNumeroSala() + ", Sessões: " + countSala + "\n");
+                            }
+
+                            // Finalização do relatório
+                            writer.write("\n====================================\n");
+                            writer.write("Relatório gerado com sucesso!\n");
+
+                        } catch (IOException e) {
+                            System.out.println("Erro ao gerar o relatório: " + e.getMessage());
+                        }
+                        break;
 
                     case 0:
                         System.out.println("encerrando programa");

@@ -26,15 +26,14 @@ public class GestaoCinema {
 
     public void AdicionarSessao(Sessao sessao) { // adicionando sessoes na lista
         sessoes.add(sessao);
-    
+
     }
-    public void AdicionarVenda(VendaDeIngressos venda){
+
+    public void AdicionarVenda(VendaDeIngressos venda) { // adiciona venda de ingresso
         vendas.add(venda);
     }
 
-
-
-    public void removeFilme(Filmes filme) {
+    public void removeFilme(Filmes filme) { // remove filme da lista
         if (filmes.contains(filme)) {
             filmes.remove(filme);
         } else {
@@ -42,7 +41,7 @@ public class GestaoCinema {
         }
     }
 
-    public void removesala(Salas sala) {
+    public void removesala(Salas sala) { // remove alguma sala da lista
         if (salas.contains(sala)) {
             salas.remove(sala);
         } else {
@@ -50,7 +49,7 @@ public class GestaoCinema {
         }
     }
 
-    public void removeSessoes(Sessao sessao) {
+    public void removeSessoes(Sessao sessao) {  //remove alguma sessão
         if (sessoes.contains(sessao)) {
             sessoes.remove(sessao);
         } else {
@@ -59,56 +58,29 @@ public class GestaoCinema {
         sessoes.remove(sessao);
     }
 
-    public void removerVenda(VendaDeIngressos venda) {
-
-        vendas.remove(venda);
-    }
-
-
-    public String listadeFilmes() {
-        for (int i = 0; i<filmes.size(); i++){
-        System.out.println(filmes.get(i));
+    public String listadeFilmes() { //retorna a lista de filmes
+        for (int i = 0; i < filmes.size(); i++) {
+            System.out.println(filmes.get(i));
         }
         return "";
     }
 
-    public String listadeSalas() {
-        for (int i = 0; i<salas.size(); i++){
-        System.out.println(salas.get(i));
+    public String listadeSalas() { //retorna a lista de salas
+        for (int i = 0; i < salas.size(); i++) {
+            System.out.println(salas.get(i));
         }
         return "";
     }
 
-    
-    public String listaDeSessoes() {
-        for (int i = 0; i<sessoes.size(); i++){
-        System.out.println(sessoes.get(i));
+    public String listaDeSessoes() { //retorna lista de sessoes
+        for (int i = 0; i < sessoes.size(); i++) {
+            System.out.println(sessoes.get(i));
         }
         return "";
     }
 
+    public void AdicionarVenda(int quantDeIngressos, Sessao codiSessao, int precoIngresso) { // metodo para registrar uma venda
 
-
-    public void AdicionarVenda(int quantDeIngressos, Sessao codiSessao, int precoIngresso) {
-        throw new UnsupportedOperationException("Unimplemented method 'AdicionarVenda'");
     }
 
 }
-/*
-            System.out.println("Menu Gestão:");
-            System.out.println("1- adicionar filmes");
-            System.out.println("2- adicionar salas");
-            System.out.println("3- adicionar sessoes");
-            System.out.println("4- adicionar vendas ");
-            System.out.println("5- remover filmes");
-            System.out.println("6- remover salas");
-            System.out.println("7- remover sessoes");
-            System.out.println("8- remover vendas");
-            System.out.println("9- lista de filmes");
-            System.out.println("10- lista deSalas");
-            System.out.println("11- lista de Sessoes");
-            System.out.println("12- Total de Vendas");
-            System.out.println("0- sair");
-            System.out.println("Escolha uma opção: ");
-            opcao = ent.nextInt();
- */

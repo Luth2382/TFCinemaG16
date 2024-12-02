@@ -15,24 +15,23 @@ public class Sessao {
         this.horario = horario;
         this.Filmes = Filme;
         this.Salas = sala;
-        this.assentosDisponiveis =  quantAssentos;
+        this.assentosDisponiveis = quantAssentos;
         this.precoIngresso = precoIngresso;
     }
-
-    
 
     public int getQuantidadAssentos() {
         return assentosDisponiveis;
     }
 
-    public Salas getSalasSessao(){
+    public Salas getSalasSessao() {
         return Salas;
     }
 
-    public Filmes getFilmesSessao(){
+    public Filmes getFilmesSessao() {
         return Filmes;
     }
-    public String getHorario(){
+
+    public String getHorario() {
         return horario;
     }
 
@@ -40,11 +39,11 @@ public class Sessao {
         return precoIngresso;
     }
 
-    public int getCodigoSala(){
+    public int getCodigoSala() {
         return codigoSessao;
     }
 
-    public void venderIngresso(int quantidade){
+    public void venderIngresso(int quantidade) {
         this.assentosDisponiveis -= quantidade;
     }
 }

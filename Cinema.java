@@ -1,3 +1,5 @@
-public class Cinema {
-    //public void InterGrafica();
+public  class Cinema{
+    /*public static void main(String[] args) { //executa codigo do jp
+        new InterGrafica();
+    }*/
 }
