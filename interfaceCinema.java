@@ -38,28 +38,43 @@ public class interfaceCinema {
         panelPrincipal.setLayout(new GridLayout(0, 1, 10, 10)); // usei grid layout para fazer com que os botões ficassem um acima do outro e ficassem mais "bonitinhos"
         frame.getContentPane().add(panelPrincipal, BorderLayout.CENTER);
 
-        JButton btnCadastrarFilme = new JButton("Cadastrar Filme");
-        btnCadastrarFilme.addActionListener(e -> openCadastroFilme()); // puxando o metodo pra cadastrar o filme n dentro do botão
-        panelPrincipal.add(btnCadastrarFilme); // adicionando botao no painel
+        JButton btCadastrarFilme = new JButton("Cadastrar Filme");
+        btCadastrarFilme.setFont(new Font("Italico", Font.ITALIC, 18));
+        btCadastrarFilme.setForeground(Color.BLACK);
+        btCadastrarFilme.setBackground(Color.WHITE);
+        btCadastrarFilme.addActionListener(e -> CadastrarFilme()); // puxando o metodo pra cadastrar o filme n dentro do botão
+        panelPrincipal.add(btCadastrarFilme); // adicionando botao no painel
 
         JButton btCadastrarSala = new JButton("Cadastrar Sala");
-        btCadastrarSala.addActionListener(e -> openCadastroSala()); // puxando metodo pra cadastrar a sala
+        btCadastrarSala.setFont(new Font("Italico", Font.ITALIC, 18));
+        btCadastrarSala.setForeground(Color.BLACK);
+        btCadastrarSala.setBackground(Color.WHITE);
+        btCadastrarSala.addActionListener(e -> CadastrarSala()); // puxando metodo pra cadastrar a sala
         panelPrincipal.add(btCadastrarSala);
 
-        JButton btnCadastrarSessao = new JButton("Cadastrar Sessão");
-        btnCadastrarSessao.addActionListener(e -> openCadastroSessao());
-        panelPrincipal.add(btnCadastrarSessao);
+        JButton btCadastrarSessao = new JButton("Cadastrar Sessão");
+        btCadastrarSessao.setFont(new Font("Italico", Font.ITALIC, 18));
+        btCadastrarSessao.setForeground(Color.BLACK);
+        btCadastrarSessao.setBackground(Color.WHITE);
+        btCadastrarSessao.addActionListener(e -> openCadastroSessao());
+        panelPrincipal.add(btCadastrarSessao);
 
-        JButton btnVendaIngressos = new JButton("Venda de Ingressos");
-        btnVendaIngressos.addActionListener(e -> openVendaIngressos());
-        panelPrincipal.add(btnVendaIngressos);
+        JButton btVendaIngressos = new JButton("Venda de Ingressos");
+        btVendaIngressos.setFont(new Font("Italico", Font.ITALIC, 18));
+        btVendaIngressos.setForeground(Color.BLACK);
+        btVendaIngressos.setBackground(Color.WHITE);
+        btVendaIngressos.addActionListener(e -> openVendaIngressos());
+        panelPrincipal.add(btVendaIngressos);
 
-        JButton btnGerarRelatorio = new JButton("Gerar Relatório");
-        btnGerarRelatorio.addActionListener(e -> gerarRelatorio());
-        panelPrincipal.add(btnGerarRelatorio);
+        JButton btGerarRelatorio = new JButton("Gerar Relatório");
+        btGerarRelatorio.setFont(new Font("Italico", Font.ITALIC, 18));
+        btGerarRelatorio.setForeground(Color.BLACK);
+        btGerarRelatorio.setBackground(Color.WHITE);
+        btGerarRelatorio.addActionListener(e -> gerarRelatorio());
+        panelPrincipal.add(btGerarRelatorio);
     }
 
-    private void openCadastroFilme() { // abrindo janela para cadastrar o filme
+    private void CadastrarFilme() { // abrindo janela para cadastrar o filme
         JFrame TelacadastroFilme = new JFrame("Cadastro de Filme");
         TelacadastroFilme.setSize(300, 300); //tamanho da tela
         TelacadastroFilme.setLocationRelativeTo(null); //centralizar a tela
@@ -78,11 +93,11 @@ public class interfaceCinema {
         JButton btSalvar = new JButton("Salvar");
         btSalvar.addActionListener(e -> {
             try {
-                int codigo = Integer.parseInt(txtCodigo.getText()); // Garantir que o código seja um número
+                int codigo = Integer.parseInt(txtCodigo.getText()); 
                 Filmes filme = new Filmes(codigo, txtNome.getText(), txtGenero.getText(), txtSinopse.getText()); // inserindo em filmes
                 sistema.AdicionarFilme(filme); // Adicionando o filme à lista
                 System.out.println("Filme salvo: " + txtNome.getText());
-                TelacadastroFilme.dispose(); // Fechando a janela após salvar
+                TelacadastroFilme.dispose(); // Fechando a janela depois salvar
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(TelacadastroFilme, "Código do filme inválido");
             }
@@ -102,7 +117,7 @@ public class interfaceCinema {
         TelacadastroFilme.setVisible(true);
     }
 
-    private void openCadastroSala() {
+    private void CadastrarSala() {
         JFrame cadastroSalaFrame = new JFrame("Cadastrar sala");
         cadastroSalaFrame.setSize(300, 200);
         JPanel panelCadastroSala = new JPanel();
