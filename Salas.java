@@ -17,4 +17,7 @@ public class Salas {
     public int getQuantidadeAssentos() {
         return quantidadeAssentos;
     }
+    public String toString(){
+        return "Sala " +numeroSala;
+    }
 }
