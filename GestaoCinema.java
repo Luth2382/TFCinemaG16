@@ -28,6 +28,9 @@ public class GestaoCinema {
         sessoes.add(sessao);
     
     }
+    public void AdicionarVenda(VendaDeIngressos venda){
+        vendas.add(venda);
+    }
 
 
 

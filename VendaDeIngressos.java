@@ -49,8 +49,8 @@ public class VendaDeIngressos {
 
     }
 
-    public void precoDoAssento(Sessao sessao, int preco){
-        
+    public void precoDoAssento(Sessao sessao, int preco) {
+
     }
 
 }
